@@ -1,0 +1,39 @@
+﻿<Window x:Class="TestTask.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestTask"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="600">
+    <StackPanel>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="10">
+                <Button Content="Change directory" Click="FirstDirectory_Change" />
+                <TextBlock x:Name="FirstPathTextBlock"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Margin="10">
+                <Button Content="Change directory" Click="SecondDirectory_Change" />
+                <TextBlock x:Name="SecondPathTextBlock"/>
+            </StackPanel>
+        </Grid>
+
+        <ListView Height="500" x:Name="InfoTable">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}"></GridViewColumn>
+                        <GridViewColumn Header="Size" DisplayMemberBinding="{Binding Path=Size}"></GridViewColumn>
+                        <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Path=Date}"></GridViewColumn>
+                        <GridViewColumn Header="State" DisplayMemberBinding="{Binding Path=StateDescription}"></GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </StackPanel>
+</Window>
