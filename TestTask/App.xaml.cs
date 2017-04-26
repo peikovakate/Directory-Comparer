@@ -1,17 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using TestTask.View;
+using TestTask.ViewModel;
 
 namespace TestTask
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            //Main view
+            var mw = new MainWindowView
+            {
+                //View Model for main view
+                DataContext = new MainWindowViewModel()
+            };
+            mw.Show();
+        }
     }
 }
